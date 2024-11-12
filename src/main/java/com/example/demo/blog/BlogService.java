@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class BlogService {
@@ -19,6 +20,11 @@ public class BlogService {
 
     public List<Blog> getBlogs() {
         return blogRepository.findAll();
+    }
+
+    public Blog getBlogById(Long id) {
+        return blogRepository.findById(id)
+                .orElseThrow(() -> new IllegalStateException("Blog not found with id: " + id));
     }
 
     public void addNewBlog(Blog blog) {
