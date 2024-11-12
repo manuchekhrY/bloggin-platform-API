@@ -19,4 +19,7 @@ public class BlogService {
         return blogRepository.findAll();
     }
 
+    public void addNewBlog(Blog blog) {
+        blogRepository.save(blog);
+    }
 }
