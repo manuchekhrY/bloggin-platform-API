@@ -26,4 +26,17 @@ public class BlogController {
         blogService.addNewBlog(blog);
     }
 
+    @PutMapping(path="{id}")
+    public void updateBlog(
+            @PathVariable("id") Long id,
+            @RequestParam(required = false) String title,
+            @RequestParam(required = false) String content,
+            @RequestParam(required = false) String category){
+        blogService.updateBlog(id, title, content, category);
+    }
+
+    @DeleteMapping(path = "{id}")
+    public void deleteBlog(@PathVariable("id") Long id) {
+        blogService.deleteBlog(id);
+    }
 }

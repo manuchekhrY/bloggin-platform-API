@@ -68,7 +68,7 @@ public class Blog {
     }
 
     public LocalDateTime getCreatedAt() {
-        return LocalDateTime.now();
+        return createdAt;
     }
 
     public void setCreatedAt(LocalDateTime createdAt) {
